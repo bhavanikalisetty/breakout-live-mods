@@ -1,5 +1,7 @@
 # LittleJS - The Tiny Fast JavaScript Game Engine
 
+Live demo: [Breakout Live Mods](examples/breakout/README.md)
+
 <div align='center' markdown='1'>
     
 ![LittleJS Logo](examples/logo.png)

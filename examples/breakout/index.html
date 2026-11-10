@@ -1,9 +1,38 @@
-<!DOCTYPE html><head>
-<title>LittleJS Breakout Game</title>
+<!DOCTYPE html>
+<head>
+<title>Breakout Live Mods</title>
 <meta charset=utf-8>
 <meta name=viewport content=width=device-width,height=device-height,initial-scale=1,maximum-scale=1>
-<meta name=apple-mobile-web-app-capable content=yes>
-<meta name=mobile-web-app-capable content=yes>
-<link rel=icon type=image/png href=../favicon.png>
+<link rel=stylesheet href=style.css>
 </head><body>
+<header>
+  <h1>Breakout Live Mods</h1>
+  <span class=badge>Muse Ember via OpenRouter</span>
+</header>
+<main class=layout>
+  <div id=stage aria-label="Breakout game"></div>
+  <aside aria-label="Mod console">
+    <h2>Mod console</h2>
+    <p class=controls>Controls: mouse / touch / gamepad stick moves paddle &middot; click or gamepad button launches &middot; R resets board.</p>
+    <form id=mod-form>
+      <label for=mod-input>Describe a mod</label>
+      <textarea id=mod-input maxlength=500 placeholder="When I break a purple brick, split the ball in two."></textarea>
+      <div class=examples>
+        <button type=button data-example="When I break a purple brick, split the ball in two.">When I break a purple brick, split the ball in two.</button>
+        <button type=button data-example="Widen my paddle every five bricks.">Widen my paddle every five bricks.</button>
+        <button type=button id=joker-btn data-example="Draw a purple and green joker face on the ball.">Draw a purple and green joker face on the ball.</button>
+      </div>
+      <button type=submit id=apply-btn>Apply mod</button>
+      <button type=button id=clear-btn>Clear / Undo</button>
+    </form>
+    <p id=mod-status role=status aria-live=polite>Ready.</p>
+    <p><strong>Active rule:</strong> <span id=active-rule>No rule active.</span></p>
+    <p><strong>Event:</strong> <span id=event-feedback>No rule has fired yet.</span></p>
+    <p><strong>Balls:</strong> <span id=ball-count>0 balls</span></p>
+    <p id=cost>This patch: not reported | Session total: not reported | Elapsed: not reported</p>
+    <canvas id=sprite-preview width=128 height=128 aria-label="Ball sprite preview"></canvas>
+    <p id=sprite-label>Original ball look</p>
+  </aside>
+</main>
 <script src=game.js type=module></script>
+</body>

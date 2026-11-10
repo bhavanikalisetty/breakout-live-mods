@@ -1,0 +1,24 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #fff7d6; color: #241a3a; }
+header { padding: 10px 16px; background: #7c3aed; color: #fff; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+header h1 { margin: 0; font-size: 1.3rem; }
+.badge { background: #fff; color: #7c3aed; border-radius: 999px; padding: 3px 10px; font-size: .8rem; font-weight: 700; }
+.layout { display: flex; gap: 12px; padding: 12px; align-items: flex-start; }
+#stage { position: relative; flex: 1 1 auto; min-width: 0; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+#stage canvas { max-width: 100%; max-height: 100%; }
+aside { flex: 0 0 320px; width: 320px; background: #fff; border: 3px solid #241a3a; border-radius: 12px; padding: 12px; }
+aside h2 { margin: 0 0 8px; font-size: 1rem; }
+.controls { font-size: .85rem; margin: 0 0 8px; }
+textarea { width: 100%; min-height: 64px; padding: 8px; border: 2px solid #241a3a; border-radius: 8px; font: inherit; }
+button { cursor: pointer; border: 2px solid #241a3a; border-radius: 8px; padding: 7px 10px; background: #ffd23f; font-weight: 700; }
+button:disabled { opacity: .55; cursor: wait; }
+.examples { display: flex; flex-direction: column; gap: 6px; margin: 8px 0; }
+.examples button { background: #e9d5ff; font-weight: 400; text-align: left; }
+#mod-status, #active-rule, #event-feedback, #cost { overflow-wrap: anywhere; }
+#mod-status.error { color: #b91c1c; }
+#sprite-preview { width: 128px; height: 128px; image-rendering: pixelated; border: 2px solid #241a3a; display: block; margin: 6px 0; }
+@media (max-width: 800px) {
+    .layout { flex-direction: column; }
+    #stage { flex: none; width: 100%; }
+    aside { flex: none; width: 100%; }
+}
